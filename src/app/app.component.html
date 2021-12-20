@@ -1,0 +1,13 @@
+<form [formGroup]="signUpFormGroup">
+  password: <input formControlName="password" />
+  <br />
+  confirm Password: <input formControlName="confirmPassword" />
+  <label
+    *ngIf="
+      signUpFormGroup.get('confirmPassword').dirty &&
+      signUpFormGroup.hasError('pwdNotSame')
+    "
+  >
+    Password is not same with new password
+  </label>
+</form>
